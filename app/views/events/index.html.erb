@@ -13,7 +13,7 @@
     <% @events.each do |event| %>
       <tr>
         <td>
-          <%= link_to event.artist, "/events/#{event.id}" %>
+          <%= link_to event.artist, event %>
         </td>
       </tr>
     <% end %>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Event', events_new_path %>
+<%= link_to 'New Event', new_event_path %>
