@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :is_logged_in, :only => [:new, :create]
 
   # GET /events
   # GET /events.json
@@ -37,5 +38,11 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:artist, :description, :price_low, :price_high, :event_date)
+    end
+
+    def is_logged_in
+      authenticate_or_request_with_http_basic("Ads") do |username, password|
+        username == "admin" && password == "admin"
+      end
     end
 end
