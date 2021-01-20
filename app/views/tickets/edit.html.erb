@@ -1,6 +1,11 @@
-<h1>Editing Ticket</h1>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <h1>Editing Ticket</h1>
 
-<%= render 'form', ticket: @ticket %>
+    <%= render 'form', ticket: @ticket %>
 
-<%= link_to 'Show', @ticket %> |
-<%= link_to 'Back', tickets_path %>
+    <br>
+    <%= link_to 'Show', @ticket, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+    <%= link_to 'Back', tickets_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+  </div>
+</div>

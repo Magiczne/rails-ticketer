@@ -12,13 +12,13 @@ class Event < ApplicationRecord
   has_many :tickets
 
   def event_not_passed
-    if event_date < Date.today
+    if event_date.presence && event_date < Date.today
       errors.add('Event', 'already passed')
     end
   end
 
   def price_high_value
-    if price_high < price_low
+    if price_high.presence && price_low.presence && price_high < price_low
       errors.add('Price high', "value should be equal to #{price_low} or larger")
     end
   end

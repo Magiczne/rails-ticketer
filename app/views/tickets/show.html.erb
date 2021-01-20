@@ -1,40 +1,43 @@
-<p id="notice"><%= notice %></p>Back
-23
+<div class="mdl-grid">
+  <div class="mdl-cell--12-col">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ticket.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @ticket.name %>
+    </p>
 
-<p>
-  <strong>Seat id seq:</strong>
-  <%= @ticket.seat_id_seq %>
-</p>
+    <p>
+      <strong>Seat id seq:</strong>
+      <%= @ticket.seat_id_seq %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @ticket.address %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @ticket.address %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @ticket.price %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @ticket.price %>
+    </p>
 
-<p>
-  <strong>Email address:</strong>
-  <%= @ticket.email_address %>
-</p>
+    <p>
+      <strong>Email address:</strong>
+      <%= @ticket.email_address %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @ticket.phone %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @ticket.phone %>
+    </p>
 
-<p>
-  <strong>Event id:</strong>
-  <%= @ticket.event_id %>
-</p>
+    <p>
+      <strong>Event id:</strong>
+      <%= @ticket.event_id %>
+    </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+    <%= link_to 'Edit', edit_ticket_path(@ticket), class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+    <%= link_to 'Back', tickets_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+  </div>
+</div>

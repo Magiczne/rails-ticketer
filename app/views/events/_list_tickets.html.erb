@@ -1,24 +1,25 @@
-<table>
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+       style="width: 100%; margin-top: 1rem;">
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Seat id seq</th>
-    <th>Address</th>
-    <th>Price</th>
-    <th>Email address</th>
-    <th>Phone</th>
-  </tr>
+    <tr>
+      <th>Name</th>
+      <th>Seat id seq</th>
+      <th>Address</th>
+      <th>Price</th>
+      <th>Email address</th>
+      <th>Phone</th>
+    </tr>
   </thead>
   <tbody>
-  <% tickets.each do |ticket| %>
-    <tr>
-      <td><%= ticket.name %></td>
-      <td><%= ticket.seat_id_seq %></td>
-      <td><%= ticket.address %></td>
-      <td><%= ticket.price %></td>
-      <td><%= ticket.email_address %></td>
-      <td><%= ticket.phone %></td>
-    </tr>
-  <% end %>
+    <% tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.name %></td>
+        <td><%= ticket.seat_id_seq %></td>
+        <td><%= ticket.address %></td>
+        <td><%= ticket.price %></td>
+        <td><%= ticket.email_address %></td>
+        <td><%= ticket.phone %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

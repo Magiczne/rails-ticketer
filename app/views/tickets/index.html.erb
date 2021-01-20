@@ -1,39 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="mdl-grid">
+  <p id="notice"><%= notice %></p>
 
-<h1>Tickets</h1>
+  <div class="mdl-cell mdl-cell--12-col">
+    <h3>Tickets</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Seat id seq</th>
-      <th>Address</th>
-      <th>Price</th>
-      <th>Email address</th>
-      <th>Phone</th>
-      <th>Event id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+       href="<%= new_ticket_path %>">
+      Create new ticket
+    </a>
 
-  <tbody>
-    <% @tickets.each do |ticket| %>
-      <tr>
-        <td><%= ticket.name %></td>
-        <td><%= ticket.seat_id_seq %></td>
-        <td><%= ticket.address %></td>
-        <td><%= ticket.price %></td>
-        <td><%= ticket.email_address %></td>
-        <td><%= ticket.phone %></td>
-        <td><%= ticket.event_id %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+           style="width: 100%; margin-top: 1rem;">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Name</th>
+          <th class="mdl-data-table__cell--non-numeric">Seat id seq</th>
+          <th class="mdl-data-table__cell--non-numeric">Address</th>
+          <th class="mdl-data-table__cell--non-numeric">Price</th>
+          <th class="mdl-data-table__cell--non-numeric">Email address</th>
+          <th class="mdl-data-table__cell--non-numeric">Phone</th>
+          <th class="mdl-data-table__cell--non-numeric">Event id</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
 
-<br>
-
-<%= link_to 'New Ticket', new_ticket_path %>
+      <tbody>
+        <% @tickets.each do |ticket| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.name %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.seat_id_seq %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.address %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.price %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.email_address %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.phone %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= ticket.event_id %></td>
+            <td><%= link_to 'Show', ticket %></td>
+            <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+            <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
