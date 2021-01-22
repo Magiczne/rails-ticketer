@@ -21,7 +21,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Ticketer</span>
+          <%= link_to 'Ticketer', '/', class: 'mdl-layout-title', style: 'color: #fff; text-decoration: none'  %>
 
           <div class="mdl-layout-spacer"></div>
 
@@ -33,6 +33,32 @@
       </header>
 
       <main class="mdl-layout__content">
+        <% if notice %>
+          <div class="mdl-grid">
+            <div class="mdl-cell">
+              <div class="mdl-card mdl-shadow--2dp"
+                   style="min-height: 0; background-color: rgba(0, 255, 0, .5)">
+                <div class="mdl-card__title">
+                  <%= notice %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if alert %>
+          <div class="mdl-grid">
+            <div class="mdl-cell">
+              <div class="mdl-card mdl-shadow--2dp"
+                   style="min-height: 0; background-color: rgba(255, 0, 0, .5);">
+                <div class="mdl-card__title">
+                  <%= alert %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
         <%= yield %>
       </main>
 
