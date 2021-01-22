@@ -26,8 +26,9 @@
           <div class="mdl-layout-spacer"></div>
 
           <nav class="mdl-navigation">
+            <%= link_to 'Events', events_path, class: 'mdl-navigation__link' %>
+
             <% if user_signed_in? %>
-              <%= link_to 'Events', events_path, class: 'mdl-navigation__link' %>
               <%= link_to 'Tickets', tickets_path, class: 'mdl-navigation__link' %>
 
               <%= link_to 'User profile', edit_user_registration_path, class: 'mdl-navigation__link' %>

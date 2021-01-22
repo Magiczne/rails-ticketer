@@ -1,5 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /tickets
   # GET /tickets.json
@@ -25,6 +27,7 @@ class TicketsController < ApplicationController
   # POST /tickets.json
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.user_id = current_user.id
 
     respond_to do |format|
       if @ticket.save
@@ -70,5 +73,10 @@ class TicketsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def ticket_params
       params.require(:ticket).permit(:name, :seat_id_seq, :address, :price, :email_address, :phone, :event_id)
+    end
+
+    def correct_user
+      @user_ticket = current_user.tickets.find_by(id: params[:id])
+      redirect_to tickets_path, notice: "You're not allowed to edit this ticket" if @user_ticket.nil?
     end
 end
